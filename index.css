@@ -1,3 +1,7 @@
 h1 {
   color: red;
 }
+
+.head {
+  border: 5px solid yellow;
+}
