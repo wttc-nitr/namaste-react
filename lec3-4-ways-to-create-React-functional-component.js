@@ -7,17 +7,23 @@ const Heading1 = () => {
   return <h1>functional component usign arrow function with return</h1>;
 };
 
-const Heading2 = () => <h1>functional component using arrow function without return</h1>;
+const Heading2 = () => (
+  <h1>functional component using arrow function without return</h1>
+);
 
-const  multiLineWithoutBraces = () => (
+const MultiLineWithoutBraces = () => (
   <h1>functional component, multi-line without curly braces</h1>
 );
 
-const Heading3 = (
-  <h1>
-    JSX multi-line.
-  </h1>
-);
+const UsingFunctionKeyword = function () {
+  return (
+    <div>
+      <h1>functional component using function keyword</h1>
+    </div>
+  );
+};
+
+const Heading3 = <h1>JSX multi-line.</h1>;
 
 const Heading4 = (
   <div>
@@ -25,9 +31,9 @@ const Heading4 = (
   </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Heading1/>)
+root.render(<Heading1 />);
 
 // this was also valid
 // root.render(multiLineWithoutBraces());
