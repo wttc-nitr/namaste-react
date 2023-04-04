@@ -26,5 +26,13 @@ const elem = (
   </React.Fragment>
 );
 
+// another way is to use empty-tags:
+const elem2 = (
+  <>
+    <div>hello</div>
+    <div>world from empty-tags</div>
+  </>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(elem);
+root.render(elem2);
