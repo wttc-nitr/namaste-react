@@ -1,7 +1,42 @@
-h1 {
-  color: red;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
-.head {
-  border: 5px solid yellow;
+.logo-container > img {
+  width: 150px;
+}
+.navbar-items > ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-items > ul > li {
+  padding: 10px;
+}
+
+.search {
+  margin: 10px 0;
+}
+
+.res-card {
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.res-card > .res-logo {
+  width: 100%;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
 }
