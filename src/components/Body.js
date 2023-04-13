@@ -5,6 +5,13 @@ import { useState } from "react";
 const Body = () => {
   // now we use state variable
   const [resList2, setresList2] = useState(resList);
+  /**
+   * or, Array destructuring
+   *  const Res = useState(resList);
+   *  const [resList2, setresList2] = Res;
+   *    or,
+   *    const resList2 = Res[0], setresList2 = Res[1];
+   */
 
   return (
     <div className="body">
