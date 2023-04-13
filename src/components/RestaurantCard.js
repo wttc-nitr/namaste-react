@@ -3,7 +3,9 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   // const { resData } = props;     this one as well as below one, both are correct
   const { resData } = props;
-  const { name, cuisines, deliveryTime, cloudinaryImageId } = resData?.data;
+  const { name, cuisines, deliveryTime, cloudinaryImageId, avgRating } =
+    resData?.data;
+
   return (
     <div className="res-card">
       <img
@@ -15,6 +17,7 @@ const RestaurantCard = (props) => {
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{deliveryTime} min</h4>
+      <h4>{avgRating}</h4>
     </div>
   );
 };
