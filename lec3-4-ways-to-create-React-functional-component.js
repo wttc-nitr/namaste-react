@@ -2,11 +2,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// functional component start with Capital letter
+// functional component start with Capital letter - convention
 const Heading1 = () => {
   return <h1>functional component usign arrow function with return</h1>;
 };
 
+/**
+ * below Heading2 is same as: (arrow function with a single statement -> no need to use {} )
+ *  const Heading2 = () => <h1> functional component using arrow function without return</h1> ;
+ */
 const Heading2 = () => (
   <h1>functional component using arrow function without return</h1>
 );
