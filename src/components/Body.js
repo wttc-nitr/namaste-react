@@ -1,19 +1,37 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
   // now we use state variable
-  const [resList2, setresList2] = useState(resList);
-  /**
-   * or, Array destructuring
-   *  const Res = useState(resList);
-   *  const [resList2, setresList2] = Res;
-   *    or,
-   *    const resList2 = Res[0], setresList2 = Res[1];
-   */
+  const [resList2, setresList2] = useState([]);
 
-  return (
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.151897276568782&lng=83.55410561528322&page_type=DESKTOP_WEB_LISTING"
+    ); // returns a promise and
+
+    const json = await data.json(); // , and when that promise is resolved we get the data in json format
+
+    console.log(json);
+
+    setresList2(json?.data?.cards[0]?.data?.data?.cards);
+  };
+
+  // conditional rendering
+  /*
+  if (resList2.length === 0) {
+    return <h2>Loading, please wait...</h2>;
+  } else
+
+  OR
+  */
+  return resList2.length === 0 ? (
+    <h2>Loading, please wait...</h2>
+  ) : (
     <div className="body">
       <div className="filter">
         <button
