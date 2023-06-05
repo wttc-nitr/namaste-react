@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import Shimmer from "../../lec6-2-shimmer-UI";
 
 const Body = () => {
   // now we use state variable
@@ -30,7 +31,7 @@ const Body = () => {
   OR
   */
   return resList2.length === 0 ? (
-    <h2>Loading, please wait...</h2>
+    <Shimmer />
   ) : (
     <div className="body">
       <div className="filter">
