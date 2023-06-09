@@ -4,7 +4,8 @@ import Shimmer from "../../lec6-2-shimmer-UI";
 
 const Body = () => {
   // now we use state variable
-  const [resList2, setresList2] = useState([]);
+  const [allRes, setAllRes] = useState([]);
+  const [filteredListOfRest, setFilteredListOfRest] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -17,39 +18,65 @@ const Body = () => {
 
     const json = await data.json(); // , and when that promise is resolved we get the data in json format
 
-    console.log(json);
-
-    setresList2(json?.data?.cards[0]?.data?.data?.cards);
+    setAllRes(json?.data?.cards[0]?.data?.data?.cards);
+    setFilteredListOfRest(json?.data?.cards[0]?.data?.data?.cards);
   };
 
-  // conditional rendering
-  /*
-  if (resList2.length === 0) {
-    return <h2>Loading, please wait...</h2>;
-  } else
+  const [value, setValue] = useState(""); // for accessing the input value for filtering
 
-  OR
-  */
-  return resList2.length === 0 ? (
+  // conditional rendering
+
+  return filteredListOfRest.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter">
+        <div>
+          <input
+            type="text"
+            placeholder="search restaurants..."
+            value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+              //to prevent readonly-input box (*Body-component is renderd each time a key is pressed)
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filteredList = allRes.filter((res) =>
+                res.data.name.toLowerCase().includes(value.toLowerCase())
+              );
+              setFilteredListOfRest(filteredList);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = resList2.filter(
-              (res) => parseInt(res.data.avgRating) >= 4
+            const filteredList = allRes.filter(
+              (res) => parseInt(res.data.avgRating) >= 3
             );
 
-            setresList2(filteredList); // change the value of resList2, we can only change it using setresList2 method
+            setFilteredListOfRest(filteredList);
           }}
         >
           Top Rated Restaurants
         </button>
+
+        <button
+          className="filter-btn"
+          onClick={() => {
+            setFilteredListOfRest(allRes);
+          }}
+        >
+          All Restaurants
+        </button>
       </div>
       <div className="res-container">
-        {resList2.map((restaurant) => (
+        {filteredListOfRest.map((restaurant) => (
           <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
       </div>

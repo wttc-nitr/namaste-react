@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
-  console.log("Header rendered"); // when setBtn is called, the whole Header component is rendered but only btn is updated.
+  // console.log("Header rendered"); // when setBtn is called, the whole Header component is rendered but only btn is updated.
 
   return (
     <div className="header">
