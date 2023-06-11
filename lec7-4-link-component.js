@@ -1,10 +1,15 @@
+/**
+ * Link component - import {Link} from 'react-router-dom'
+ *
+ * use it instead of anchor tags to avoid reloading the whole page
+ */
+
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
-  // console.log("Header rendered"); // when setBtn is called, the whole Header component is rendered but only btn is updated.
 
   return (
     <div className="header">
