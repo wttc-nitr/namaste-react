@@ -23,7 +23,7 @@ const Menu = () => {
 
   if (resInfo?.length === 0) return <h2>Menu page, loading...</h2>;
 
-  console.log(resInfo);
+  // console.log(resInfo);
 
   const { name, cuisines, costForTwoMessage, cloudinaryImageId } =
     resInfo?.cards[0]?.card?.card?.info;
