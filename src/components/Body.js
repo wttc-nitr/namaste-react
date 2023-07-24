@@ -15,16 +15,16 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.7605545&lng=83.3731675&page_type=DESKTOP_WEB_LISTING"
-    ); // returns a promise and
+    ); // returns a promise and when that promise is resolved we get the data
 
-    const json = await data.json(); // , and when that promise is resolved we get the data in json format
+    const json = await data.json(); // , now convert the data in json format
 
     // console.log(json);
 
     setAllRes(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredListOfRest(json?.data?.cards[2]?.data?.data?.cards);
   };
-
+  
   const [value, setValue] = useState(""); // for accessing the input value for filtering
 
   return filteredListOfRest?.length === 0 ? (
