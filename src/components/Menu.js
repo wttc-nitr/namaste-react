@@ -8,8 +8,10 @@ const Menu = () => {
 
   if (resInfo?.length === 0) return <h2>Menu page, loading...</h2>;
 
-  const { name, cuisines, costForTwoMessage, cloudinaryImageId, avgRating} =
+  const { name, cuisines, costForTwoMessage, avgRating} =
     resInfo?.cards[0]?.card?.card?.info;
+  
+  const {cloudinaryImageId} = resInfo?.cards[0]?.card?.card?.info;
 
   const itemCards =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card

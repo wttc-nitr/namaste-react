@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "../../lec6-2-shimmer-UI";
 import { Link } from "react-router-dom";
+import { RES_LIST_URL } from "../utils/constants";
 
 const Body = () => {
   // now we use state variable
@@ -13,16 +14,14 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.7605545&lng=83.3731675&page_type=DESKTOP_WEB_LISTING"
-    ); // returns a promise and when that promise is resolved we get the data
+    const data = await fetch(RES_LIST_URL); // returns a promise and when that promise is resolved we get the data
 
     const json = await data.json(); // , now convert the data in json format
 
-    // console.log(json);
+    // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-    setAllRes(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredListOfRest(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRes(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredListOfRest(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
   
   const [value, setValue] = useState(""); // for accessing the input value for filtering
@@ -46,7 +45,7 @@ const Body = () => {
             className="search-btn"
             onClick={() => {
               const filteredList = allRes.filter((res) =>
-                res.data.name.toLowerCase().includes(value.toLowerCase())
+                res.info.name.toLowerCase().includes(value.toLowerCase())
               );
               setFilteredListOfRest(filteredList);
             }}
@@ -58,7 +57,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = allRes.filter(
-              (res) => parseInt(res.data.avgRating) >= 4
+              (res) => parseInt(res.info.avgRating) >= 4
             );
 
             setFilteredListOfRest(filteredList);
@@ -79,8 +78,8 @@ const Body = () => {
       <div className="res-container">
         {filteredListOfRest?.map((restaurant) => (
           <Link
-            to={"/restaurants/" + restaurant.data.id}
-            key={restaurant.data.id}
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
           >
             {<RestaurantCard resData={restaurant} />}
           </Link>

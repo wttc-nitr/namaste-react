@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
     cloudinaryImageId,
     avgRating,
     address,
-  } = resData?.data;
+  } = resData?.info;
 
   return (
     <div className="res-card">

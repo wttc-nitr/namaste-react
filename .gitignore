@@ -1,4 +1,6 @@
-App.js
 node_modules/
 dist/
 .parcel-cache/
+previous.css
+tailwind.config.js
+.postcssrc
