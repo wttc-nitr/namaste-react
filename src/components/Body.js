@@ -30,52 +30,52 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div>
-          <input
-            type="text"
-            placeholder="search restaurants..."
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-              //to prevent readonly-input box (*Body-component is renderd each time a key is pressed)
-            }}
-          />
-          <button
-            className="search-btn"
-            onClick={() => {
-              const filteredList = allRes.filter((res) =>
-                res.info.name.toLowerCase().includes(value.toLowerCase())
-              );
-              setFilteredListOfRest(filteredList);
-            }}
-          >
-            Search
-          </button>
-        </div>
+      <div className="flex buttons-container p-4 items-center">
+        
+        <input className="border border-solid border-black"
+          type="text"
+          placeholder="search restaurants..."
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+            //to prevent readonly-input box (*Body-component is renderd each time a key is pressed)
+          }}
+        />
         <button
-          className="filter-btn"
+          className="px-4 py-2 bg-green-100 m-4 rounded-lg"
           onClick={() => {
-            const filteredList = allRes.filter(
-              (res) => parseInt(res.info.avgRating) >= 4
+            const filteredList = allRes.filter((res) =>
+              res.info.name.toLowerCase().includes(value.toLowerCase())
             );
-
             setFilteredListOfRest(filteredList);
           }}
         >
+          Search
+        </button>
+      
+        <button
+          className="px-4 py-2 bg-gray-300 m-4 rounded-lg"
+          onClick={() => {
+            const filteredList = allRes.filter(
+              (res) => parseInt(res.info.avgRating) >= 4
+              );
+              
+              setFilteredListOfRest(filteredList);
+            }}
+            >
           Top Rated Restaurants
         </button>
 
         <button
-          className="filter-btn"
+          className="px-4 py-2 bg-slate-300 m-4 rounded-lg"
           onClick={() => {
             setFilteredListOfRest(allRes);
           }}
-        >
+          >
           All Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap">
         {filteredListOfRest?.map((restaurant) => (
           <Link
             to={"/restaurants/" + restaurant.info.id}
