@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "../../lec6-2-shimmer-UI";
 import { Link } from "react-router-dom";
 import { RES_LIST_URL } from "../utils/constants";
+// import TopButtons from "../utils/TopButtons";
 
 const Body = () => {
   // now we use state variable
@@ -23,16 +24,16 @@ const Body = () => {
     setAllRes(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredListOfRest(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
-  
-  const [value, setValue] = useState(""); // for accessing the input value for filtering
 
+  const [value, setValue] = useState(""); // for accessing the input value for filtering
+  
   return filteredListOfRest?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="flex buttons-container p-4 items-center">
+      <div className="flex buttons-container p-4 items-center justify-center">
         
-        <input className="border border-solid border-black"
+        <input className="border border-solid border-black py-1 px-2 rounded"
           type="text"
           placeholder="search restaurants..."
           value={value}
@@ -75,7 +76,7 @@ const Body = () => {
           All Restaurants
         </button>
       </div>
-      <div className="res-container flex flex-wrap">
+      <div className="res-container flex flex-wrap justify-center">
         {filteredListOfRest?.map((restaurant) => (
           <Link
             to={"/restaurants/" + restaurant.info.id}
