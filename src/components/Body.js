@@ -32,7 +32,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="flex buttons-container p-4 items-center justify-center">
+      <div className="flex buttons-container p-4 items-center justify-center sticky top-24 bg-white">
         
         <input className="border border-solid border-black py-1 px-2 rounded"
           type="text"

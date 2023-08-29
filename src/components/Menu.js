@@ -22,7 +22,7 @@ const Menu = () => {
       <div>
         <h1 className="text-4xl">{name}</h1>
         <img className="my-4 block rounded-md mx-auto" src={RES_IMG_URL + cloudinaryImageId}/>
-        <h3>{avgRating} ratings</h3>
+        <h3 className="text-lg font-medium my-2">{avgRating} ratings</h3>
       </div>
       <p>
         {cuisines.join(", ")} - {costForTwoMessage}
