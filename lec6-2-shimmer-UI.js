@@ -27,16 +27,16 @@ const Shimmer = () => {
         </button>
       </div>
       <div className="flex justify-center flex-wrap">
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
-        <div className="m-4 p-4 w-[250px] h-96 bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
+        <div className="m-4 p-4 w-[250px] h-[26rem] bg-slate-300 rounded-xl hover:bg-slate-400 hover:shadow-xl">Card</div>
       </div>
     </>
   );
