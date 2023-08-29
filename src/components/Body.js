@@ -31,8 +31,8 @@ const Body = () => {
   return filteredListOfRest?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="flex buttons-container p-4 items-center justify-center sticky top-24 bg-white">
+    <div className="body my-2">
+      <div className="flex buttons-container p-4 items-center justify-center h-[70px] mt-6 sticky top-[70px] bg-white">
         
         <input className="border border-solid border-black py-1 px-2 rounded"
           type="text"
