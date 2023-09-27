@@ -1,5 +1,5 @@
 const ItemList = ({items}) => {
-  console.log(items);
+  // console.log(items);
 
   return (
     <>
@@ -17,47 +17,7 @@ const ItemList = ({items}) => {
         ))
       }
     </>
-      // {
-      //   /* now print items from 1 category */
-      //   data.map(item => {
-      //     const {id, name, price, description} = item?.card?.info;
-
-      //     return (
-      //       <div>
-      //         <div className="name+price">
-
-      //         </div>
-
-      //         <div className="desciption">
-
-      //         </div>
-      //       </div>
-      //     )
-      //   });
-      // }
-      // <>
-      //   data.map(item => <div></div>)
-      // </>
   );
 };
 
 export default ItemList;
-
-
-// const ItemList = ({data}) => {
-//   console.log(data);
-
-//   data.map(category => {
-//     category.map(item => {
-//       const {id, name, price, description} = item?.card?.info;
-    
-//       return (
-//         <>
-//           <p key={id}>{name} - Rs. {price}</p>
-//         </>
-//       );
-//     })
-//   });
-// }
-
-// export default ItemList;
