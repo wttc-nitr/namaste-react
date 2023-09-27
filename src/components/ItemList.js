@@ -22,7 +22,7 @@ const ItemList = ({items}) => {
             {/* item-image */}
             <div className="w-3/12 ml-3 relative">
               <img src={CDN_URL + item?.card?.info?.imageId} className="rounded-xl"/>
-              <button className="bg-slate-300 font-normal text-base px-2 py-1 absolute rounded-lg rounded-tr-none rounded-bl-none right-0 bottom-0 hover:shadow-xl"> Add + </button>
+              <button title="Add to Cart" className="bg-slate-300 font-normal text-base px-2 py-1 absolute rounded-lg rounded-tr-none rounded-bl-none right-0 bottom-0 hover:shadow-xl"> Add + </button>
             </div>
           </div>
         ))
