@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Shimmer from "../../lec6-2-shimmer-UI";
 import { Link } from "react-router-dom";
 import { RES_LIST_URL } from "../utils/constants";
-// import TopButtons from "../utils/TopButtons";
 
 const Body = () => {
   // now we use state variable
