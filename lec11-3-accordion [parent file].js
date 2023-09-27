@@ -42,9 +42,9 @@ const Menu = () => {
           setIndex={
             () => {
               if (id === index)
-                setId(-1);
+                setId(-1); // to toggle the current toggled category
               else
-                setId(index)
+                setId(index) 
             }
           }
           />
