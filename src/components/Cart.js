@@ -8,9 +8,6 @@ const Cart = () => {
   // console.log(cartItems);
 
   const dispatch = useDispatch();
-  const handleRemoveItem = () => {
-    dispatch(removeItem());
-  }
 
   const handleClearCart = () => {
     dispatch(clearCart());
@@ -23,7 +20,8 @@ const Cart = () => {
     //   <button onClick={handleClearCart} className="block">clear Cart</button>
     // </>
     <div className="text-center w-6/12 mx-auto">
-      <h1 className="font-bold my-6 text-2xl">Cart</h1>
+      <h1 className="font-bold my-6 text-2xl">Cart ({cartItems.length} items)</h1>
+      <button onClick={handleClearCart} className="text-lg px-4 py-2 bg-gray-300 rounded-lg">Clear your Cart</button>
       <ItemList items={cartItems} input={'Remove'}/>
     </div>
   )
