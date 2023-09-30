@@ -5,7 +5,7 @@ import appStore from "./lec12-1-build-a-Redux-Store";
 
 const Xyz = () => {
   return (
-    <Provider stor={appStore}>
+    <Provider store={appStore}>
       <div>
         <Header />
         <Outlet />
@@ -13,8 +13,6 @@ const Xyz = () => {
     </Provider>
   )
 };
-
-export default appStore;
 
 // now, our whole app can use appStore.
 // we can also provide appStore the a portion of the app, just like Context.

@@ -8,14 +8,20 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Menu from "./components/Menu";
 import { lazy, Suspense } from "react";
+import appStore from "./utils/appStore"; // telling my app that this is the Redux-Store
+import { Provider } from "react-redux";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
-    
+    // console.log(appStore);
+
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 
@@ -46,6 +52,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurants/:resId",
         element: <Menu />,
       },
+      {
+        path: "/cart",
+        element: <Cart />
+      }
     ],
     errorElement: <Error />,
   },

@@ -3,6 +3,7 @@ import { addItem } from "./lec12-3-creating-a-Slice";
 
 const dispatch = useDispatch();
 
+// on clicking the 'Add+' button
 const handleAddItem = (item) => {
   // Dispatch an action
 
